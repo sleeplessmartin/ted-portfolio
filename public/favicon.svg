@@ -1,32 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <!-- Dark navy background -->
-  <rect width="32" height="32" rx="7" fill="hsl(222, 47%, 7%)"/>
+  <!-- Dark background -->
+  <rect width="32" height="32" rx="6" fill="#060c1a"/>
 
-  <!-- Subtle inner border -->
-  <rect x="0.5" y="0.5" width="31" height="31" rx="6.5" stroke="hsl(199, 89%, 48%)" stroke-opacity="0.25"/>
+  <!-- Subtle cyan border -->
+  <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="5.5"
+        stroke="#0ab5d9" stroke-opacity="0.3" stroke-width="1.5"/>
 
-  <!-- T -->
-  <text
-    x="6"
-    y="23"
-    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif"
-    font-size="18"
-    font-weight="800"
-    fill="hsl(213, 31%, 91%)"
-    letter-spacing="-1"
-  >T</text>
+  <!-- T — horizontal crossbar (white) -->
+  <rect x="5" y="8" width="22" height="4" rx="1.5" fill="#dde5ef"/>
 
-  <!-- H in cyan -->
-  <text
-    x="16"
-    y="23"
-    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif"
-    font-size="18"
-    font-weight="800"
-    fill="hsl(199, 89%, 48%)"
-    letter-spacing="-1"
-  >H</text>
-
-  <!-- Cyan dot accent bottom-right -->
-  <circle cx="28" cy="27" r="2.5" fill="hsl(199, 89%, 48%)" opacity="0.8"/>
+  <!-- T — vertical stem (cyan) -->
+  <rect x="14" y="12" width="4" height="13" rx="1.5" fill="#0ab5d9"/>
 </svg>
