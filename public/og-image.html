@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', system-ui, sans-serif;
+      background: hsl(222, 47%, 4%);
+      color: hsl(213, 31%, 91%);
+      position: relative;
+    }
+
+    /* Grid background — matches the Hero section */
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    /* Bottom fade */
+    .fade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 60%, hsl(222, 47%, 4%) 100%);
+    }
+
+    /* Left cyan accent bar */
+    .accent-bar {
+      position: absolute;
+      left: 0;
+      top: 100px;
+      width: 4px;
+      height: 340px;
+      background: linear-gradient(to bottom, transparent, hsl(199, 89%, 48%), transparent);
+      border-radius: 0 2px 2px 0;
+    }
+
+    /* Main content */
+    .content {
+      position: relative;
+      z-index: 10;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 88px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid hsla(199, 89%, 48%, 0.4);
+      background: hsla(199, 89%, 48%, 0.08);
+      border-radius: 100px;
+      padding: 8px 22px;
+      font-size: 15px;
+      color: hsl(199, 89%, 48%);
+      margin-bottom: 30px;
+      width: fit-content;
+      letter-spacing: 0.2px;
+    }
+
+    .name-line1 {
+      font-size: 90px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -3px;
+      color: hsl(213, 31%, 91%);
+    }
+
+    .name-line2 {
+      font-size: 90px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -3px;
+      color: hsl(199, 89%, 48%);
+      margin-bottom: 32px;
+    }
+
+    .description {
+      font-size: 19px;
+      color: hsl(215, 16%, 57%);
+      line-height: 1.55;
+      max-width: 700px;
+      margin-bottom: 36px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background: hsla(222, 47%, 11%, 0.9);
+      border: 1px solid hsla(213, 31%, 91%, 0.1);
+      border-radius: 8px;
+      padding: 7px 16px;
+      font-size: 13px;
+      color: hsl(215, 16%, 67%);
+      letter-spacing: 0.2px;
+    }
+
+    /* URL bottom left */
+    .url {
+      position: absolute;
+      bottom: 42px;
+      left: 88px;
+      font-size: 14px;
+      color: hsla(199, 89%, 48%, 0.65);
+      letter-spacing: 0.5px;
+      z-index: 10;
+    }
+
+    /* Decorative rings — right side */
+    .rings {
+      position: absolute;
+      right: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 460px;
+      height: 460px;
+      z-index: 1;
+    }
+
+    .ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid hsla(199, 89%, 48%, 0.12);
+    }
+
+    .ring-1 { inset: 0; }
+    .ring-2 { inset: 50px; border-color: hsla(199, 89%, 48%, 0.18); }
+    .ring-3 { inset: 110px; border-color: hsla(199, 89%, 48%, 0.26); }
+    .ring-glow {
+      position: absolute;
+      inset: 175px;
+      border-radius: 50%;
+      background: hsla(199, 89%, 48%, 0.08);
+      border: 1px solid hsla(199, 89%, 48%, 0.35);
+    }
+  </style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="fade"></div>
+  <div class="accent-bar"></div>
+
+  <div class="rings">
+    <div class="ring ring-1"></div>
+    <div class="ring ring-2"></div>
+    <div class="ring ring-3"></div>
+    <div class="ring-glow"></div>
+  </div>
+
+  <div class="content">
+    <div class="badge">⚡ AI Automation Engineer · Senior Software Engineer</div>
+    <div class="name-line1">Ted Martin</div>
+    <div class="name-line2">Hermosisima</div>
+    <div class="description">
+      17+ years of enterprise engineering depth — building production-grade<br>
+      AI pipelines, RAG chatbots, and LLM-integrated agents that ship and scale.
+    </div>
+    <div class="tags">
+      <div class="tag">n8n</div>
+      <div class="tag">LLM APIs</div>
+      <div class="tag">RAG Architecture</div>
+      <div class="tag">Go · C# · .NET</div>
+      <div class="tag">Azure · AWS</div>
+    </div>
+  </div>
+
+  <div class="url">tedhermosisima.dev</div>
+</body>
+</html>
