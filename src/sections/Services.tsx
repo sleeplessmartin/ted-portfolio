@@ -8,28 +8,28 @@ const services = [
     number: "001",
     title: "Custom AI Agents",
     description: "Conversational agents built on LLM APIs that handle inbound queries, qualify leads, set appointments, and operate 24/7 without human intervention. Integrated with your existing channels — Messenger, WhatsApp, Slack, web.",
-    gradient: "from-blue-950/80 to-cyan-950/80",
+    gradient: "from-sky-50 to-cyan-100 border-sky-200/60 dark:from-blue-950/80 dark:to-cyan-950/80 dark:border-border",
   },
   {
     icon: Workflow,
     number: "002",
     title: "Workflow Automation",
     description: "End-to-end n8n pipelines that eliminate manual, repetitive processes. From content creation and publishing, to data aggregation and reporting — engineered for reliability, not just functionality.",
-    gradient: "from-violet-950/80 to-purple-950/80",
+    gradient: "from-violet-50 to-purple-100 border-violet-200/60 dark:from-violet-950/80 dark:to-purple-950/80 dark:border-border",
   },
   {
     icon: Database,
     number: "003",
     title: "RAG Chatbots",
     description: "Retrieval-Augmented Generation systems that ingest your documents, policies, and knowledge bases into vector stores — giving employees and customers instant, accurate answers over internal information.",
-    gradient: "from-emerald-950/80 to-teal-950/80",
+    gradient: "from-emerald-50 to-teal-100 border-emerald-200/60 dark:from-emerald-950/80 dark:to-teal-950/80 dark:border-border",
   },
   {
     icon: Plug,
     number: "004",
     title: "API & Systems Integration",
     description: "19+ years of API design and integration experience applied to connecting your stack. CRMs, calendars, social platforms, healthcare systems, payment providers — built with OAuth, JWT, and production-grade security.",
-    gradient: "from-amber-950/80 to-orange-950/80",
+    gradient: "from-amber-50 to-orange-100 border-amber-200/60 dark:from-amber-950/80 dark:to-orange-950/80 dark:border-border",
   },
 ]
 

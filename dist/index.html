@@ -2,12 +2,39 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Prevent flash of wrong theme on load -->
+    <script>
+      (function () {
+        var t = localStorage.getItem('portfolio-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.classList.toggle('dark', t === 'dark');
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
+    <meta name="theme-color" content="#050d1a" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ted Martin Hermosisima — AI Automation Engineer</title>
-    <meta name="description" content="Senior Software Engineer with 17+ years of experience, specializing in AI Automation pipelines, n8n workflows, RAG chatbots, and LLM-integrated systems." />
-    <script type="module" crossorigin src="/assets/index-BSUx8eNd.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BOkJzeBT.css">
+    <meta name="description" content="Senior Software Engineer with 19+ years of experience, specializing in AI Automation pipelines, n8n workflows, RAG chatbots, and LLM-integrated systems." />
+
+    <!-- Open Graph / Facebook / Messenger -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tedhermosisima.dev/" />
+    <meta property="og:title" content="Ted Martin Hermosisima — AI Automation Engineer" />
+    <meta property="og:description" content="19+ years of enterprise engineering depth — now building production-grade AI automation pipelines, RAG chatbots, and LLM-integrated agents." />
+    <meta property="og:image" content="https://tedhermosisima.dev/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://tedhermosisima.dev.com/" />
+    <meta name="twitter:title" content="Ted Martin Hermosisima — AI Automation Engineer" />
+    <meta name="twitter:description" content="19+ years of enterprise engineering depth — now building production-grade AI automation pipelines, RAG chatbots, and LLM-integrated agents." />
+    <meta name="twitter:image" content="https://tedhermosisima.dev.com/og-image.png" />
+    <script type="module" crossorigin src="/assets/index-ecqJJ6iU.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DU85lP_g.css">
   </head>
   <body>
     <div id="root"></div>

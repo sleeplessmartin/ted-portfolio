@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, Bot } from "lucide-react"
+import { Menu, X, Bot, Sun, Moon } from "lucide-react"
+import { useTheme } from "./hooks/useTheme"
 import { Hero } from "./sections/Hero"
 import { SocialProof } from "./sections/SocialProof"
 import { About } from "./sections/About"
@@ -24,6 +25,7 @@ const navLinks = [
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { theme, toggle } = useTheme()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -63,7 +65,31 @@ function Navbar() {
               </button>
             </li>
           ))}
-          <li className="ml-2">
+          <li className="ml-1">
+            <motion.button
+              onClick={toggle}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+              aria-label="Toggle theme"
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.span
+                  key={theme}
+                  initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
+                  animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                  exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
+                  transition={{ duration: 0.15 }}
+                  className="flex items-center justify-center"
+                >
+                  {theme === "dark"
+                    ? <Sun className="h-4 w-4" />
+                    : <Moon className="h-4 w-4" />}
+                </motion.span>
+              </AnimatePresence>
+            </motion.button>
+          </li>
+          <li className="ml-1">
             <button
               onClick={() => handleNav("#contact")}
               className="px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
@@ -73,13 +99,37 @@ function Navbar() {
           </li>
         </ul>
 
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setMobileOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          <motion.button
+            onClick={toggle}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+            aria-label="Toggle theme"
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.span
+                key={theme}
+                initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
+                animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
+                transition={{ duration: 0.15 }}
+                className="flex items-center justify-center"
+              >
+                {theme === "dark"
+                  ? <Sun className="h-4 w-4" />
+                  : <Moon className="h-4 w-4" />}
+              </motion.span>
+            </AnimatePresence>
+          </motion.button>
+          <button
+            className="text-foreground"
+            onClick={() => setMobileOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </nav>
 
       <AnimatePresence>
@@ -139,7 +189,7 @@ function Footer() {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background transition-colors duration-300">
       <Navbar />
       <main>
         <Hero />

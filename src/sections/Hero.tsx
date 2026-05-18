@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 export function Hero() {
   return (
     <section id="hero" className="relative flex items-center justify-center overflow-hidden bg-background min-h-screen w-full">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
+      <div className="absolute inset-0 hero-grid" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/80" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
