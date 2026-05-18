@@ -10,7 +10,7 @@ import { Projects } from "./sections/Projects"
 import { Services } from "./sections/Services"
 import { Experience } from "./sections/Experience"
 import { Certifications } from "./sections/Certifications"
-import { Testimonials } from "./sections/Testimonials"
+// import { Testimonials } from "./sections/Testimonials"
 import { Contact } from "./sections/Contact"
 
 const navLinks = [
@@ -200,7 +200,7 @@ export default function App() {
         <Services />
         <Experience />
         <Certifications />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <Contact />
       </main>
       <Footer />
