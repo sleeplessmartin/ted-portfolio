@@ -12,12 +12,12 @@ const stats = [
 
 const logos = [
   {
-    src: "https://svgl.app/library/azure.svg",
+    src: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftazure.svg",
     alt: "Microsoft Azure",
     gradient: { from: "#0078D4", via: "#005A9E", to: "#003D6B" },
   },
   {
-    src: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+    src: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/amazonwebservices.svg",
     alt: "Amazon AWS",
     gradient: { from: "#FF9900", via: "#FF8C00", to: "#CC7000" },
   },
