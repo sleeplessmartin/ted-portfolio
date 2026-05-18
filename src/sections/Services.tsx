@@ -28,7 +28,7 @@ const services = [
     icon: Plug,
     number: "004",
     title: "API & Systems Integration",
-    description: "17+ years of API design and integration experience applied to connecting your stack. CRMs, calendars, social platforms, healthcare systems, payment providers — built with OAuth, JWT, and production-grade security.",
+    description: "19+ years of API design and integration experience applied to connecting your stack. CRMs, calendars, social platforms, healthcare systems, payment providers — built with OAuth, JWT, and production-grade security.",
     gradient: "from-amber-950/80 to-orange-950/80",
   },
 ]

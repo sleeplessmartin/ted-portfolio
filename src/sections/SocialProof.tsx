@@ -4,7 +4,7 @@ import { AwardCard } from "@/components/ui/achievement-cards"
 import { Briefcase, Cpu, Code2, Clock } from "lucide-react"
 
 const stats = [
-  { icon: Clock, title: "Years of Experience", description: "17+ Years" },
+  { icon: Clock, title: "Years of Experience", description: "19+ Years" },
   { icon: Cpu, title: "AI Projects Shipped", description: "5+ Automations" },
   { icon: Code2, title: "Core Languages", description: "Go · C# · TypeScript" },
   { icon: Briefcase, title: "Enterprise Companies", description: "Optum · Lore Health" },

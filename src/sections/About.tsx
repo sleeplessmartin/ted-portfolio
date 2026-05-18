@@ -4,7 +4,7 @@ import { CheckCircle2 } from "lucide-react"
 const edges = [
   "Production-grade engineering discipline applied to every automation pipeline",
   "Deep systems-thinking: designs that are maintainable, observable, and failure-tolerant",
-  "17+ years of API integration experience — no black-box glue code",
+  "19+ years of API integration experience — no black-box glue code",
   "Cloud-native architecture (Azure, AWS) that scales beyond the demo",
   "Hands-on LLM prompt engineering and RAG system design",
   "Code review rigor that most automation specialists skip entirely",
@@ -45,7 +45,7 @@ export function About() {
               running at scale now goes into every automation I design.
             </p>
             <p>
-              I bring 17+ years of systems-thinking to a space that badly needs it. My background in
+              I bring 19+ years of systems-thinking to a space that badly needs it. My background in
               OAuth 2.0, JWT, HMAC signing, and secure API design means the automations I build
               aren't just functional — they're production-ready from day one.
             </p>

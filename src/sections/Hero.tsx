@@ -41,7 +41,7 @@ export function Hero() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl"
           >
-            17+ years of enterprise engineering depth — now weaponized for AI automation.
+            19+ years of enterprise engineering depth — now weaponized for AI automation.
             I build production-grade pipelines, RAG chatbots, and LLM-integrated agents that
             actually ship and scale.
           </motion.p>
