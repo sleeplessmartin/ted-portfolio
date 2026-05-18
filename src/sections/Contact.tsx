@@ -73,7 +73,7 @@ export function Contact() {
             </a>
 
             <a
-              href="https://calendly.com"
+              href="https://calendly.com/ted-martin-hermosisima/15min"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 rounded-2xl border border-border bg-card p-5 hover:border-primary/40 transition-colors"
