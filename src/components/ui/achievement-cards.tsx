@@ -13,7 +13,7 @@ const AwardCard = React.forwardRef<HTMLDivElement, AwardCardProps>(
       <div
         ref={ref}
         className={cn(
-          "flex min-w-[200px] items-center gap-4 rounded-xl border bg-card p-4 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1",
+          "flex h-full items-center gap-4 rounded-xl border bg-card p-4 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1",
           className
         )}
         {...props}
