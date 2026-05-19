@@ -47,13 +47,13 @@ const MarqueeLogoScroller = React.forwardRef<HTMLDivElement, MarqueeLogoScroller
               {[...logos, ...logos].map((logo, index) => (
                 <div
                   key={index}
-                  className="group relative h-16 w-32 shrink-0 flex items-center justify-center rounded-lg bg-secondary/70 overflow-hidden"
+                  className="group relative h-16 w-32 shrink-0 flex items-center justify-center rounded-lg bg-secondary/70 dark:bg-white/[0.07] overflow-hidden"
                 >
                   <div
                     style={{ '--from': logo.gradient.from, '--via': logo.gradient.via, '--to': logo.gradient.to } as React.CSSProperties}
                     className="absolute inset-0 scale-150 opacity-0 transition-all duration-700 ease-out group-hover:opacity-100 group-hover:scale-100 bg-gradient-to-br from-[var(--from)] via-[var(--via)] to-[var(--to)]"
                   />
-                  <img src={logo.src} alt={logo.alt} className="relative h-3/4 w-auto object-contain" />
+                  <img src={logo.src} alt={logo.alt} className="relative h-3/4 w-auto object-contain dark:invert dark:group-hover:invert-0" />
                 </div>
               ))}
             </div>
