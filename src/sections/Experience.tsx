@@ -58,7 +58,7 @@ const experience = [
     location: "Lapu-Lapu City, Philippines",
     highlights: [
       "Developed C# and VB.NET business-logic layers for U.S.-facing web applications using ASP.NET.",
-      "Created and maintained MSSQL Server scripts, stored procedures, and web UI components.",
+      "Created and maintained MS SQL Server scripts, stored procedures, and web UI components.",
     ],
   },
 ]
