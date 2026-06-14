@@ -16,7 +16,7 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
       <div
         ref={ref}
         className={cn(
-          "group relative flex flex-col overflow-hidden rounded-2xl border bg-card text-card-foreground shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:border-primary/40",
+          "group relative flex flex-col overflow-hidden rounded-2xl border bg-card text-card-foreground shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:border-primary/40 cursor-pointer",
           className
         )}
         {...props}
@@ -55,6 +55,10 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
                 {tool}
               </span>
             ))}
+          </div>
+
+          <div className="mt-2 flex items-center justify-center gap-1 text-xs font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            View Workflow <span className="text-sm">→</span>
           </div>
         </div>
       </div>

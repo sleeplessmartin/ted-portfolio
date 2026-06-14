@@ -1,8 +1,25 @@
-import { motion } from "framer-motion"
+import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { ProjectCard } from "@/components/ui/project-card"
-import { Video, FileSearch, MessageSquare, CalendarCheck, BookOpen } from "lucide-react"
+import { Video, FileSearch, MessageSquare, CalendarCheck, BookOpen, X } from "lucide-react"
 
-const projects = [
+import youtubeImg from "../projects/Automated Youtube Shorts and Facebook Reels Creator.png"
+import jobsImg from "../projects/AI Jobs Scraper + Resume Optimizer.png"
+import messengerImg from "../projects/AI Agent for Facebook Messenger.png"
+import appointmentImg from "../projects/AI Appointment Setter.png"
+import chatbotImg from "../projects/Company Rules Handbook Chatbot (RAG).png"
+
+type Project = {
+  icon: React.ReactNode
+  title: string
+  problem: string
+  solution: string
+  outcome: string
+  tools: string[]
+  image: string
+}
+
+const projects: Project[] = [
   {
     icon: <Video className="h-6 w-6" />,
     title: "Automated YouTube Shorts & Facebook Reels Creator",
@@ -10,6 +27,7 @@ const projects = [
     solution: "Built an end-to-end content automation pipeline that generates scripts, formats video assets, and publishes to YouTube Shorts and Facebook Reels on a fully scheduled basis.",
     outcome: "Eliminated manual content workflows entirely — enabling consistent publishing at zero marginal effort per video.",
     tools: ["n8n", "LLM APIs", "YouTube API", "Facebook Graph API", "Scheduled Triggers"],
+    image: youtubeImg,
   },
   {
     icon: <FileSearch className="h-6 w-6" />,
@@ -18,6 +36,7 @@ const projects = [
     solution: "Engineered an intelligent pipeline that scrapes job listings from multiple sources, uses AI to analyze role requirements and keywords, then automatically tailors resume content to maximize ATS match scores.",
     outcome: "Turned a hours-long manual process into a fully automated, per-application optimization engine.",
     tools: ["n8n", "Web Scraping", "LLM APIs", "ATS Analysis", "Multi-source Aggregation"],
+    image: jobsImg,
   },
   {
     icon: <MessageSquare className="h-6 w-6" />,
@@ -26,6 +45,7 @@ const projects = [
     solution: "Engineered a conversational AI agent integrated with Facebook Messenger that handles inbound user queries and generates context-aware responses autonomously.",
     outcome: "Drives engagement 24/7 — eliminating response latency and reducing dependency on human intervention for first-touch interactions.",
     tools: ["n8n", "LLM APIs", "Facebook Messenger API", "Webhook Automation"],
+    image: messengerImg,
   },
   {
     icon: <CalendarCheck className="h-6 w-6" />,
@@ -34,6 +54,7 @@ const projects = [
     solution: "Designed an AI-powered scheduling automation that qualifies inbound leads, negotiates availability, and books confirmed appointments autonomously.",
     outcome: "Removed manual coordination overhead entirely and shortened time-to-meeting for qualified prospects.",
     tools: ["n8n", "LLM APIs", "Calendar APIs", "Lead Qualification Logic"],
+    image: appointmentImg,
   },
   {
     icon: <BookOpen className="h-6 w-6" />,
@@ -42,10 +63,26 @@ const projects = [
     solution: "Built a RAG-based chatbot that ingests internal policy documents into a vector store and enables employees to query company rules, procedures, and handbook content in natural language.",
     outcome: "Delivers instant, accurate answers and measurably reduces repetitive HR support load.",
     tools: ["n8n", "RAG", "Vector Store", "LLM APIs", "Document Ingestion"],
+    image: chatbotImg,
   },
 ]
 
 export function Projects() {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+
+  useEffect(() => {
+    if (!selectedProject) return
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedProject(null)
+    }
+    document.addEventListener("keydown", handleKey)
+    document.body.style.overflow = "hidden"
+    return () => {
+      document.removeEventListener("keydown", handleKey)
+      document.body.style.overflow = ""
+    }
+  }, [selectedProject])
+
   return (
     <section id="projects" className="py-24 px-6 bg-card/40">
       <div className="max-w-6xl mx-auto">
@@ -71,12 +108,53 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
+              onClick={() => setSelectedProject(project)}
             >
               <ProjectCard {...project} className="h-full" />
             </motion.div>
           ))}
         </div>
       </div>
+
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm"
+            onClick={() => setSelectedProject(null)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92, y: 16 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92, y: 16 }}
+              transition={{ type: "spring", damping: 28, stiffness: 320 }}
+              className="relative bg-card rounded-2xl shadow-2xl border border-border w-full max-w-4xl overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between px-6 py-4 border-b border-border">
+                <h3 className="text-base font-semibold pr-4 leading-snug">{selectedProject.title}</h3>
+                <button
+                  onClick={() => setSelectedProject(null)}
+                  className="shrink-0 rounded-lg p-2 hover:bg-secondary transition-colors"
+                  aria-label="Close"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+              <div className="p-4 max-h-[80vh] overflow-y-auto">
+                <img
+                  src={selectedProject.image}
+                  alt={`${selectedProject.title} n8n workflow`}
+                  className="w-full rounded-lg object-contain"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }
